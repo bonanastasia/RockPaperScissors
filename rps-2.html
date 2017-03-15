@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2</title>
+  </head>
+  <body>
+
+    <div id="game">
+    Press r, p, or s to start playing!
+
+<p>wins: <span id="wins">0</span></p>
+
+<p>losses: <span id="losses">0</span></p>
+
+<p>ties: <span id="ties">0</span></p>
+
+    </div>
+
+    <script type="text/javascript">
+
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var options = ["r", "p", "s"];
+      
+      var winCount=0;
+      var lossCount=0;
+      var tieCount=0;
+
+      // This function is run whenever the user presses a key.
+      document.onkeyup = function(event) {
+
+        // Determines which key was pressed
+        var userGuess = event.key;
+
+        // Alerts the key the user pressed (userGuess).
+        alert(userGuess);
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+
+        // Alerts the Computer's guess.
+        alert(computerGuess);
+
+      if (userGuess=="s" && computerGuess=="r"){
+        lossCount++;
+        document.getElementById("losses").innerHTML = lossCount;
+        console.log(lossCount);
+    
+
+      }else if(userGuess=="s"&&computerGuess=="p"){
+        winCount++;
+         document.getElementById("wins").innerHTML = winCount;
+         console.log(winCount);
+      
+
+      }else if(userGuess=="r" && computerGuess=="s"){
+        winCount++;
+        document.getElementById("wins").innerHTML = winCount;
+        console.log(winCount);
+
+      }else if(userGuess=="r"&& computerGuess=="p"){
+        lossCount++;
+        document.getElementById("losses").innerHTML = lossCount;
+        console.log(lossCount);
+      
+      }else if(userGuess=="p"&&computerGuess=="r"){
+        winCount++;
+        document.getElementById("wins").innerHTML = winCount;
+        console.log(winCount);
+       
+
+      }else if(userGuess=="p"&& computerGuess=="s"){
+        lossCount++;
+        document.getElementById("losses").innerHTML = lossCount;
+        console.log(lossCount);
+       
+
+      }else{
+        tieCount++;
+         document.getElementById("ties").innerHTML = tieCount;
+         console.log(tieCount);
+      }
+
+   };
+
+      
+      
+
+
+
+    </script>
+
+  </body>
+</html>
